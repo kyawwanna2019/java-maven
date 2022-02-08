@@ -7,6 +7,7 @@ node {
     stage('Generate Jar Package') {
             //dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
                 sh 'cd my-app'
+                sh 'mvn archetype:generate "-DarchetypeGroupId=io.dropwizard.archetypes" "-DarchetypeArtifactId=java-simple"'
                 sh 'mvn -B -DskipTests clean package'
             //} 
     }   
